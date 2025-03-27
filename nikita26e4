@@ -1,0 +1,130 @@
+"use client";
+
+import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
+
+const styles = StyleSheet.create({
+  page: {
+    padding: 40,
+    fontSize: 12,
+    fontFamily: "Times-Roman",
+  } as const,
+  title: {
+    fontSize: 14,
+    textAlign: "center",
+    marginBottom: 5,
+    textDecoration: "underline",
+    fontWeight: "bold",
+  } as const,
+  subtitle: {
+    fontSize: 10,
+    textAlign: "center",
+    marginBottom: 10,
+    fontStyle: "italic",
+  } as const,
+  heading: {
+    fontSize: 12,
+    textAlign: "center",
+    fontWeight: "bold",
+    marginBottom: 15,
+  } as const,
+  section: {
+    marginBottom: 10,
+    textAlign: "justify",
+  } as const,
+  text: {
+    marginBottom: 5,
+  } as const,
+  bold: {
+    fontWeight: "bold",
+  } as const,
+  table: {
+    display: "table",
+    width: "100%",
+    borderStyle: "solid",
+    borderWidth: 1,
+    marginBottom: 10,
+  } as const,
+  tableRow: {
+    flexDirection: "row",
+  } as const,
+  tableCol: {
+    width: "20%",
+    borderStyle: "solid",
+    borderWidth: 1,
+    padding: 5,
+    fontSize: 10,
+  } as const,
+  line: {
+    borderBottomWidth: 1,
+    borderBottomColor: "#000",
+    borderBottomStyle: "solid",
+    width: "100%",
+  } as const,
+  signatureSection: {
+    marginTop: 20,
+    textAlign: "right",
+  } as const,
+});
+
+const Form26E4 = () => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      {/* FORM TITLE */}
+      <Text style={styles.title}>FORM 26 E4</Text>
+      <Text style={styles.subtitle}>(See rule 170)</Text>
+
+      {/* FORM HEADING */}
+      <Text style={styles.heading}>
+        APPLICATION FORM FOR ADVERTISEMENT OF AYURVEDIC, SIDDHA AND UNANI DRUGS
+      </Text>
+      <Text style={styles.subtitle}>(Note: Application may be made only for one advertisement)</Text>
+
+      {/* FORM BODY */}
+      <Text style={styles.section}>
+        1. I <Text style={styles.line}> </Text> (name of the applicant with designation) am the authorised 
+        signatory of <Text style={styles.line}> </Text> (name and full address of the manufacturing company). 
+        License number <Text style={styles.line}> </Text> valid up to <Text style={styles.line}> </Text> hereby apply for 
+        consideration of the following contents of the intended advertisement:
+      </Text>
+
+      {/* TABLE */}
+      <View style={styles.table}>
+        <View style={styles.tableRow}>
+          <Text style={styles.tableCol}>Name of the Ayurvedic/ Siddha/ Unani drug</Text>
+          <Text style={styles.tableCol}>Contents of the advertisement including picture/audio/video (Enclose copy)</Text>
+          <Text style={styles.tableCol}>Reference of indication(s)</Text>
+          <Text style={styles.tableCol}>Language of advertisement</Text>
+          <Text style={styles.tableCol}>Medium of advertisement (print/electronic/internet/audio-visual)</Text>
+        </View>
+      </View>
+
+      {/* FEES & DOCUMENTS SECTION */}
+      <Text style={styles.section}>
+        2. The prescribed fee of rupees one thousand has been deposited to the Government under the head of account 
+        <Text style={styles.line}> </Text> and the relevant Treasury Challan is enclosed herewith.
+      </Text>
+
+      <Text style={styles.section}>3. Copies of the following documents are attached:</Text>
+      <Text style={styles.text}>i) Valid license</Text>
+      <Text style={styles.text}>ii) References of indications/claims</Text>
+      <Text style={styles.text}>iii) Proof of safety</Text>
+      <Text style={styles.text}>iv) Proof of efficacy</Text>
+      <Text style={styles.text}>v) Quality standards</Text>
+      <Text style={styles.text}>vi) Any other (please specify)</Text>
+      <Text>a. <Text style={styles.line}> </Text></Text>
+      <Text>b. <Text style={styles.line}> </Text></Text>
+      <Text>c. <Text style={styles.line}> </Text></Text>
+
+      {/* DATE AND SIGNATURE */}
+      <Text style={styles.section}>Date: <Text style={styles.line}> </Text></Text>
+
+      <View style={styles.signatureSection}>
+        <Text>Signature <Text style={styles.line}> </Text></Text>
+        <Text>(Applicant)</Text>
+        <Text>Address and contact details</Text>
+      </View>
+    </Page>
+  </Document>
+);
+
+export default Form26E4;
