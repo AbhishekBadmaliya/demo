@@ -1,0 +1,93 @@
+"use client";
+
+import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
+
+const styles = StyleSheet.create({
+  page: {
+    padding: 40,
+    fontSize: 12,
+    fontFamily: "Times-Roman",
+  } as const,
+  title: {
+    fontSize: 14,
+    textAlign: "center",
+    textDecoration: "underline",
+    fontWeight: "bold",
+    marginBottom: 5,
+  } as const,
+  subtitle: {
+    fontSize: 10,
+    textAlign: "center",
+    marginBottom: 10,
+    fontStyle: "italic",
+  } as const,
+  heading: {
+    fontSize: 12,
+    textAlign: "center",
+    fontWeight: "bold",
+    marginBottom: 15,
+  } as const,
+  section: {
+    marginBottom: 10,
+    textAlign: "justify",
+  } as const,
+  line: {
+    borderBottomWidth: 1,
+    borderBottomColor: "#000",
+    borderBottomStyle: "solid",
+    width: "100%",
+  } as const,
+  signatureBlock: {
+    marginTop: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  } as const,
+  signatureSection: {
+    textAlign: "right",
+  } as const,
+});
+
+const Form26EI = () => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      {/* FORM HEADER */}
+      <Text style={styles.title}>FORM 26E-I</Text>
+      <Text style={styles.subtitle}>(See rule 157B)</Text>
+
+      {/* MAIN HEADING */}
+      <Text style={styles.heading}>
+        CERTIFICATE OF GOOD MANUFACTURING PRACTICES (GMP) TO MANUFACTURER OF AYURVEDA, SIDDHA OR UNANI DRUGS
+      </Text>
+
+      {/* BODY */}
+      <Text style={styles.section}>
+        Certified that manufacturing unit licensee, namely <Text style={styles.line}> </Text> situated at 
+        <Text style={styles.line}> </Text>, State <Text style={styles.line}> </Text>, Licence No. 
+        <Text style={styles.line}> </Text> comply with the requirements of Good Manufacturing Practices 
+        of Ayurveda-Siddha-Unani drugs as laid down in Schedule T of the Drugs and Cosmetics Rules, 1945.
+      </Text>
+
+      <Text style={styles.section}>
+        This certificate is valid for a <Text style={styles.line}> </Text> [period of five years] and the Good Manufacturing 
+        Practices (GMP) is valid for the various dosage forms or Rasaushadhis, as follows:
+      </Text>
+
+      {/* DATED & SIGNED BLOCK */}
+      <View style={styles.signatureBlock}>
+        <View>
+          <Text>Dated <Text style={styles.line}> </Text></Text>
+          <Text>Place <Text style={styles.line}> </Text></Text>
+        </View>
+
+        <View style={styles.signatureSection}>
+          <Text>Signature <Text style={styles.line}> </Text></Text>
+          <Text>Designation <Text style={styles.line}> </Text></Text>
+          <Text>Licensing Authority for Ayurveda/</Text>
+          <Text>Siddha/Unani Drugs.</Text>
+        </View>
+      </View>
+    </Page>
+  </Document>
+);
+
+export default Form26EI;
